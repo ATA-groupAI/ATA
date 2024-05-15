@@ -50,37 +50,59 @@
         </div>
 
 		<script>
-			$(document).ready(function() {
-				$("#messageArea").on("submit", function(event) {
+			class ChatApp {
+				constructor() {
+					this.initialize();
+				}
+
+				initialize() {
+					$(document).ready(() => {
+						$("#messageArea").on("submit", (event) => this.handleSubmit(event));
+					});
+				}
+
+				handleSubmit(event) {
+					event.preventDefault();
 					const date = new Date();
 					const hour = date.getHours();
 					const minute = date.getMinutes();
-					const str_minute = minute < 10 ? "0" + minute : minute; // Add leading zero if minute is less than 10
-					const str_time = hour + ":" + str_minute; // Use the formatted minute string
+					const str_minute = minute < 10 ? "0" + minute : minute; 
+					const str_time = hour + ":" + str_minute;
 
-					var rawText = $("#text").val();
-
-					var userHtml = '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' + rawText + '<span class="msg_time_send">'+ str_time + '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
-					
-					$("#text").val("");
-					$("#messageFormeight").append(userHtml);
+					let rawText = $("#text").val();
+					this.appendUserMessage(rawText, str_time);
 
 					$.ajax({
-						data: {
-							msg: rawText,
-						},
+						data: { msg: rawText },
 						type: "POST",
 						url: "/get",
-					}).done(function(data) {
-						// Extract the message from the JSON response object
-						var message = data.message;
-						var botHtml = '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="/static/Adam.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' + message + '<span class="msg_time">' + str_time + '</span></div></div>';
-						// $("#messageFormeight").append($.parseHTML(botHtml));
-						$("#messageFormeight").append(marked.parse(botHtml));
-					});
-					event.preventDefault();
-				});
-			});
+					}).done((data) => this.appendBotMessage(data.message, str_time));
+				}
+
+				appendUserMessage(message, time) {
+					const userHtml = `<div class="d-flex justify-content-end mb-4">
+										<div class="msg_cotainer_send">${message}<span class="msg_time_send">${time}</span></div>
+										<div class="img_cont_msg">
+											<img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg">
+										</div>
+									</div>`;
+					$("#text").val("");
+					$("#messageFormeight").append(userHtml);
+				}
+
+				appendBotMessage(message, time) {
+					const botHtml = `<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="/static/Adam.png" class="rounded-circle user_img_msg">
+									</div>
+									<div class="msg_cotainer">${message}<span class="msg_time">${time}</span></div>
+									</div>`;
+					$("#messageFormeight").append(marked.parse(botHtml));
+				}
+			}
+
+			// Instantiate the ChatApp class to run the application
+			new ChatApp();
 		</script>
     </body>
 </html>
