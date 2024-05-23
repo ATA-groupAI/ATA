@@ -1,17 +1,28 @@
-# ATA
+# ATA 
 
-Clone repo and create a virtual environment
-
+Follow these steps to set up and run the project locally:
+1. Clone the Repository
+```
 git clone (https://github.com/ATA-groupAI/ATA.git)
 cd chatbot-deployment
+```
+2. Create and Activate a Virtual Environment
+```
 python -m venv ATA
 .venv\Scripts\activate
+```
 
-Download the required packages using the command below
+3. Install Required Packages
+```
 pip install -r requirements. txt 
+```
 
-After all packages are installed, type the command line below to run the flask server
+4. Run the Flask Server
+```
 flask run
+```
 
-To deactivate the virtual environment, simply type the command line below
+5. Deactivate the Virtual Environment
+```
 deactivate
+```
