@@ -20,12 +20,12 @@ html{
 
 .card{
 	height: 500px;
-	border-radius: 15px !important;
-	background-color: rgba(0,0,0,0.8) !important;
+	border-radius: 15px;
+	background-color: rgba(0,0,0,0.8);
 }
 
 .contacts_body{
-	padding:  0.75rem 0 !important;
+	padding:  0.75rem 0;
 	overflow-y: auto;
 	white-space: nowrap;
 }
@@ -35,14 +35,14 @@ html{
 }
 
 .card-header {
-    border-radius: 15px 15px 0 0 !important;
-    border-bottom: 0 !important;
-    background-color: #1e90ff !important;
+    border-radius: 15px 15px 0 0;
+    border-bottom: 0;
+    background-color: #1e90ff;
 }
 
 .card-footer{
-	border-radius: 0 0 15px 15px !important;
-	border-top: 0 !important;
+	border-radius: 0 0 15px 15px;
+	border-top: 0;
 }
 
 .container{
@@ -50,51 +50,51 @@ html{
 }
 
 .search{
-	border-radius: 15px 0 0 15px !important;
-	background-color: rgba(0,0,0,0.3) !important;
-	border:0 !important;
-	color:white !important;
+	border-radius: 15px 0 0 15px;
+	background-color: rgba(0,0,0,0.3);
+	border:0;
+	color:white;
 }
 
 .search:focus{
-	box-shadow:none !important;
-    outline: 0px !important;
+	box-shadow:none;
+    outline: 0px;
 }
 
 .type_msg{
-	background-color: rgba(0,0,0,0.3) !important;
-	border:0 !important;
-	color:white !important;
-	height: 60px !important;
+	background-color: rgba(0,0,0,0.3);
+	border:0;
+	color:white;
+	height: 60px;
 	overflow-y: auto;
 }
 
 .type_msg:focus{
-	 box-shadow:none !important;
-   outline:0px !important;
+	 box-shadow:none;
+   outline:0px;
 }
 
 .attach_btn{
-	border-radius: 15px 0 0 15px !important;
-	background-color: rgba(0,0,0,0.3) !important;
-	border:0 !important;
-	color: white !important;
+	border-radius: 15px 0 0 15px;
+	background-color: rgba(0,0,0,0.3);
+	border:0;
+	color: white;
 	cursor: pointer;
 }
 
 .send_btn{
-	border-radius: 0 15px 15px 0 !important;
-	background-color: rgba(0,0,0,0.3) !important;
-	border:0 !important;
-	color: white !important;
+	border-radius: 0 15px 15px 0;
+	background-color: rgba(0,0,0,0.3);
+	border:0;
+	color: white;
 	cursor: pointer;
 }
 
 .search_btn{
-	border-radius: 0 15px 15px 0 !important;
-	background-color: rgba(0,0,0,0.3) !important;
-	border:0 !important;
-	color: white !important;
+	border-radius: 0 15px 15px 0;
+	background-color: rgba(0,0,0,0.3);
+	border:0;
+	color: white;
 	cursor: pointer;
 }
 
@@ -104,9 +104,9 @@ html{
 }
 
 .contacts li{
-	width: 100% !important;
+	width: 100%;
 	padding: 5px 10px;
-	margin-bottom: 15px !important;
+	margin-bottom: 15px;
 }
 
 .active{
@@ -151,7 +151,7 @@ html{
 }
 
 .offline{
-	background-color: #c23616 !important;
+	background-color: #c23616;
 }
 
 .user_info{
@@ -266,6 +266,6 @@ html{
 
 @media(max-width: 576px){
 	.contacts_card{
-	margin-bottom: 15px !important;
+	margin-bottom: 15px;
 }
 }
